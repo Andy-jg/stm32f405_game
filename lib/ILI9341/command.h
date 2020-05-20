@@ -29,14 +29,14 @@ typedef enum CommandCode {
 
 typedef struct Command {
   command_code_e code;
-  uint8_t length;
+  size_t length;
   uint8_t parameters[15];
 } command_t;
 
 static const command_t initializationCommands[] = {
   {
     SOFTWARE_RESET,
-    0,
+    16,
     {}
   },
   {
@@ -136,12 +136,12 @@ static const command_t initializationCommands[] = {
   },
   {
     SLEEP_OUT,
-    0,
+    16,
     {}
   },
   {
     DISPLAY_ON,
-    0,
+    16,
     {}
-  },
+  }
 };
